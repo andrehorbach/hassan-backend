@@ -1,11 +1,11 @@
-// SERVER RUNNING FOR COLUMNS
+// SERVER RUNNING API FOR CLIENTS ONLY
 
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 const cors = require("cors");
-const db = require("./models/columns");
+const db = require("./models/clients");
 //const { clients } = require("./app/models");
 
 const app = express();
@@ -34,12 +34,12 @@ mongoose.connect("mongodb+srv://admin-andre:flapinho@cluster0.acnw3.mongodb.net/
 
 // const Client = mongoose.model("Client", clientsSchema);
 
-const columnsList = db.Column();
+const clientList = db.Client();
 
 app.get("/", function(req, res) {
-  columnsList.find({}, (err, foundItems) => {
+  clientList.find({}, (err, foundItems) => {
     console.log(foundItems);
-    res.send(foundItems) // retirar [] se nao funcionar
+    res.send([foundItems]) // retirar [] se nao funcionar
   })
 });
 
