@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const columnsSchema = new mongoose.Schema({
-    name: String,
+    Columns: Object
   },
 );
 

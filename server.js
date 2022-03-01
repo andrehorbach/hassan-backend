@@ -14,11 +14,11 @@ var corsOptions = {
   origin: "http://localhost:3000"
 };
 
-app.set('view engine', 'ejs');
 app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-
+app.use(express.json());
+app.use(bodyParser.json());
 //mongoose.connect("mongodb+srv://admin-andre:flapinho@cluster0.acnw3.mongodb.net/hassan-board?retryWrites=true&w=majority", {useNewUrlParser: true});
 mongoose.connect("mongodb+srv://admin-andre:flapinho@cluster0.acnw3.mongodb.net/hassan-board?retryWrites=true&w=majority", {useNewUrlParser: true});
 
@@ -38,10 +38,29 @@ const columnsList = db.Column();
 
 app.get("/", function(req, res) {
   columnsList.find({}, (err, foundItems) => {
-    console.log(foundItems);
     res.send(foundItems) // retirar [] se nao funcionar
   })
 });
+
+app.post("/posts", function(req, res) {
+  const data = req.body
+  
+  console.log(data)
+
+  columnsList.findOneAndUpdate({}, data, {new: true}, (err, doc)=>{
+    console.log('RESPONSE START');
+    console.log(doc)
+    console.log('RESPONSE END');
+    doc.save();
+  })
+
+  // columnsList.insertMany(data, function(error, docs) {})
+  
+  res.send("OK")
+
+});
+
+// app.put("/", function(req, res){
 
 
 app.listen(8080, function() {
