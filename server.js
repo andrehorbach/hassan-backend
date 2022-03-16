@@ -48,9 +48,7 @@ app.post("/posts", function(req, res) {
   console.log(data)
 
   columnsList.findOneAndUpdate({}, data, {new: true}, (err, doc)=>{
-    console.log('RESPONSE START');
     console.log(doc)
-    console.log('RESPONSE END');
     doc.save();
   })
 
