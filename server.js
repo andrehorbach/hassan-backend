@@ -39,6 +39,7 @@ const columnsList = db.Column();
 app.get("/", function(req, res) {
   columnsList.find({}, (err, foundItems) => {
     res.send(foundItems) // retirar [] se nao funcionar
+    console.log(foundItems);
   })
 });
 

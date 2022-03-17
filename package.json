@@ -6,6 +6,7 @@
     "lodash": "^4.17.21",
     "mongoose": "^6.2.2",
     "multiparty": "^4.2.3",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "react-confirm-alert": "^2.8.0"
   }
 }
