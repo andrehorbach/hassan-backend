@@ -61,7 +61,12 @@ app.post("/posts", function(req, res) {
 
 // app.put("/", function(req, res){
 
+  let port = process.env.PORT;
 
-app.listen(8080, function() {
-  console.log("Server started on port 8080");
-});
+  if (port == null || port == "") {
+      port = 8080;
+  }
+  
+  app.listen(port, function(){
+      console.log("server started on 8080.")
+  })
