@@ -11,7 +11,7 @@ const db = require("./models/columns");
 const app = express();
 
 var corsOptions = {
-  origin: "https://hassan-frontend.herokuapp.com/"
+  origin: "https://hassan-frontend.herokuapp.com"
 };
 
 app.use(cors(corsOptions));
