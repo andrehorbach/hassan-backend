@@ -12,6 +12,7 @@ const app = express();
 
 var corsOptions = {
   origin: "https://hassan-frontend.herokuapp.com"
+ // origin: "http://localhost:3000"
 };
 
 app.use(cors(corsOptions));
