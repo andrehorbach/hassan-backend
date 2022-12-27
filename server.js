@@ -11,8 +11,8 @@ const db = require("./models/columns");
 const app = express();
 
 var corsOptions = {
-  origin: "https://hassan-frontend.onrender.com"
-  //origin: "http://localhost:3000"
+  //origin: "https://hassan-frontend.onrender.com"
+  origin: "http://localhost:3000"
 };
 
 app.use(cors(corsOptions));
@@ -21,7 +21,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb+srv://admin-andre:flapinho@cluster0.acnw3.mongodb.net/hassan-board?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://admin-andre:GGn8q02h6SaqSDz8@cluster0.acnw3.mongodb.net/hassan-board?retryWrites=true&w=majority", {useNewUrlParser: true});
 
 
 const columnsList = db.Column();
