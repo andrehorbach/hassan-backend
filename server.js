@@ -11,8 +11,8 @@ const db = require("./models/columns");
 const app = express();
 
 var corsOptions = {
-  //origin: "https://hassan-frontend.onrender.com"
-  origin: "http://localhost:3000"
+  origin: "https://hassan-frontend.onrender.com"
+  //origin: "http://localhost:3000"
 };
 
 app.use(cors(corsOptions));
